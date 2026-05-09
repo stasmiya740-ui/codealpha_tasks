@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Age Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background"></div>
+  <div id="particleField" class="particle-field" aria-hidden="true"></div>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="subtitle">Age Calculator</p>
+        <h1>Find Your Age Instantly</h1>
+      </div>
+      <div class="mode-switch">
+        <span>Light</span>
+        <button id="themeToggle" aria-label="Toggle dark mode" type="button" class="toggle-btn">
+          <span class="toggle-circle"></span>
+        </button>
+        <span>Dark</span>
+      </div>
+    </header>
+
+    <section class="status-panel glass-card">
+      <div class="datetime-group">
+        <div>
+          <p class="label">Today</p>
+          <p id="currentDate" class="value">--</p>
+        </div>
+        <div>
+          <p class="label">Time</p>
+          <p id="currentTime" class="value">--</p>
+        </div>
+      </div>
+      <div class="instructions">
+        <p>Enter your birth date and press <strong>Enter</strong> or click Calculate.</p>
+      </div>
+    </section>
+
+    <main class="main-card glass-card">
+      <form id="ageForm" class="form-grid">
+        <label for="dob">Date of Birth</label>
+        <input id="dob" type="date" aria-label="Date of Birth" />
+
+        <div class="button-row">
+          <button id="calculateBtn" type="submit" class="primary-btn">Calculate Age</button>
+          <button id="resetBtn" type="button" class="secondary-btn">Clear</button>
+        </div>
+      </form>
+
+      <section class="result-card" aria-live="polite">
+        <div class="loader" id="loader" aria-hidden="true">
+          <div class="loader-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <p>Calculating your age...</p>
+        </div>
+
+        <div class="result-header">
+          <div>
+            <p class="label">Your Age</p>
+            <h2>Age Breakdown</h2>
+          </div>
+          <p id="ageSummary" class="mini-note">Complete details are shown below.</p>
+        </div>
+
+        <div class="age-boxes">
+          <div class="box">
+            <p class="stat" id="years">0</p>
+            <span>Years</span>
+          </div>
+          <div class="box">
+            <p class="stat" id="months">0</p>
+            <span>Months</span>
+          </div>
+          <div class="box">
+            <p class="stat" id="days">0</p>
+            <span>Days</span>
+          </div>
+        </div>
+
+        <div class="extra-info">
+          <p id="nextBirthday">🎉 Next Birthday in: -- days</p>
+          <p id="totalDays">🗓 Total Days Lived: --</p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer-links glass-card">
+      <p>Connect with me</p>
+      <div class="links-row">
+        <a href="https://github.com/stasmiya740-ui" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="http://www.linkedin.com/in/syeda-tasmiya-7b481b355." target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:your.email@example.com">Email</a>
+      </div>
+    </footer>
+  </div>
+
+  <div id="toastContainer" aria-live="assertive" aria-atomic="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
